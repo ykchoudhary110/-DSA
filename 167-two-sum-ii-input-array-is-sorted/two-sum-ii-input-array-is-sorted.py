@@ -7,7 +7,7 @@ class Solution:
             sum = numbers[i] + numbers[j]
 
             if sum == target:
-                return i+1, j+1
+                return [i+1, j+1]
             elif sum<target:
                 i+=1
             else:
