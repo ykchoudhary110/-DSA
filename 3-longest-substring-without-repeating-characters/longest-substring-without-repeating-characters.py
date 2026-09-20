@@ -29,7 +29,7 @@ class Solution:
                     del freq[s[left]]
                 left+=1
 
-            res = max(res, right - left +1)
+            res = max(res, len(freq))
 
         return res
 
