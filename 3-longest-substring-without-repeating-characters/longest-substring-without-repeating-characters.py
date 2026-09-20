@@ -6,7 +6,17 @@ class Solution:
 
 
         for right in range(len(s)): 
+            # it means first the choose betwwen 0 and right and then we get a in here we will simply return freq using +1 to it otherwise intially its zero
+#             Who came? → s[right]
+
+# How many times have they come before? → freq.get(..., 0)
+
+# They came one more time → +1
+
+# Update their record → freq[...]
+
             freq[s[right]]=freq.get(s[right], 0)+1# add right chararcter to freq
+
 
 
 
