@@ -16,8 +16,9 @@ class Solution:
 
             res = max(res,right-left)
 
+        
         return res
-#     1. Add right element
+# 1. Add right element
 #        ↓
 # 2. Check zeros
 #        ↓
@@ -28,3 +29,5 @@ class Solution:
 # 5. Window is valid
 #        ↓
 # 6. Calculate answer
+
+         
