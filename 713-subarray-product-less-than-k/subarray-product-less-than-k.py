@@ -15,7 +15,8 @@ class Solution:
                 product //= nums[left]
                 left+=1
 
-            res+= right - left + 1
+            res+= right - left + 1 # it counts all the subarray form teh right msot pointer that it right will be there in the subarray adn other thant that is already counted when right was at its last positon 
+            
 
         return res
 
