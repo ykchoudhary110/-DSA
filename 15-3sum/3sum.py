@@ -23,6 +23,7 @@ class Solution:
                     right-=1
 
                     while left<right and nums[left] == nums[left-1]: # to avoide duplictes
+                    # while here because if skips first iteration but while chekc for consecutive unitl its satisfies the sceneio
                         left+=1
                     while left<right and nums[right] == nums[right+1]:
                         right -=1
