@@ -1,19 +1,39 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         max_freq = 0
-        left = 0
         res = 0
-        freq= {}
-
+        freq = {}
+        left = 0
         for right in range(len(s)):
-            freq[s[right]] = freq.get(s[right], 0)+1
+            freq[s[right]]= freq.get(s[right], 0 )+1
             max_freq= max(max_freq, freq[s[right]])
+            #now worng window when window need to be slided that is non matching char increases mroe thena k
+            while (right - left +1) - max_freq >k:
+                freq[s[left]]-= 1
+                left +=1
+            res = max(res, right -left +1)
 
-            while (right - left +1 ) - max_freq >k:#chekc wheater non matching charcter counter is greater than k and window shoudl be shifted 
-                freq[s[left]]-=1
-                left+=1
-            res = max(res, right - left +1)
         return res
+
+
+
+
+
+
+#         max_freq = 0
+#         left = 0
+#         res = 0
+#         freq= {}
+
+#         for right in range(len(s)):
+#             freq[s[right]] = freq.get(s[right], 0)+1
+#             max_freq= max(max_freq, freq[s[right]])
+
+#             while (right - left +1 ) - max_freq >k:#chekc wheater non matching charcter counter is greater than k and window shoudl be shifted 
+#                 freq[s[left]]-=1
+#                 left+=1
+#             res = max(res, right - left +1)
+#         return res
    
 
 
@@ -21,20 +41,20 @@ class Solution:
 
 
 
-#         left = 0
-#         freq = {}
-#         res  = 0
-#         max_freq =0
+# #         left = 0
+# #         freq = {}
+# #         res  = 0
+# #         max_freq =0
 
-#         for right in range(len(s)):
-#             freq[s[right]] = freq.get(s[right], 0)+1
-#             max_freq = max(max_freq , freq[s[right]])
+# #         for right in range(len(s)):
+# #             freq[s[right]] = freq.get(s[right], 0)+1
+# #             max_freq = max(max_freq , freq[s[right]])
 
-# #char that we can replace right - left +1 is length of window
-#             while (right - left +1) -  max_freq > k:
-#                 freq[s[left]]-=1
-#                 left+= 1
+# # #char that we can replace right - left +1 is length of window
+# #             while (right - left +1) -  max_freq > k:
+# #                 freq[s[left]]-=1
+# #                 left+= 1
 
-#             res = max(res, right - left +1)
+# #             res = max(res, right - left +1)
 
-#         return res
+# #         return res
