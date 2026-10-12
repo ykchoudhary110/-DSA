@@ -1,28 +1,25 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
-        p_freq= {}
-        window_freq= {}
+        pfreq= {}
+        winfreq= {}
         for ch in p:
-            p_freq[ch] = p_freq.get(ch, 0)+1
+            pfreq[ch] = pfreq.get(ch,0) +1
 
-        left = 0
+        left = 0 
         res = []
-
         for right in range(len(s)):
-            window_freq[s[right]] = window_freq.get(s[right], 0)+1
-
-            if right - left +1 >len(p):
-                window_freq[s[left]]-=1
-                if window_freq[s[left]]==0:
-                    del window_freq[s[left]]
-
+            winfreq[s[right]]= winfreq.get(s[right], 0)+1
+            if right -left +1 > len(p):
+                winfreq[s[left]]-=1
+                if winfreq[s[left]]==0:
+                    del winfreq[s[left]]
                 left+=1
-            if right - left +1==len(p): # if lenght of boht is equal
-                if p_freq==window_freq: #comapre teh freq in both 
+
+            if right -left +1 == len(p):
+                if winfreq== pfreq:
                     res.append(left)
         return res
-
-
+       
 
 
 
