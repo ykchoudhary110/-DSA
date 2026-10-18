@@ -1,6 +1,9 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         freq = {0:1}
+
+
+        
         res = 0
         current_sum= 0
         for num in nums:
