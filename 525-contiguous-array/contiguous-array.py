@@ -1,27 +1,6 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        res = 0
-        first_seen = {0:-1}
-        current_sum =0
-        for i, num in enumerate(nums):
-            if num==0:
-                current_sum-=1
-            else:
-                current_sum+=1
-            if current_sum in first_seen:
-                lenght = i - first_seen[current_sum]
-                res = max(res, lenght)
-            else:
-                first_seen[current_sum]=i
-
-        return res
-                
-
-
-
-
-
-
+ 
 
 
         res = 0
