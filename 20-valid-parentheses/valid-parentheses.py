@@ -2,7 +2,9 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         pairs = {')': '(', '}': '{', ']': '['}
-        # pairs = {'(': ')', '{': '}', '[' : ']'} never do like this as it will create error becaseu
+        # pairs = {'(': ')', '{': '}', '[' : ']'}  # PYTHON RULE: 'char in pairs' ONLY checks the LEFT side (the keys).
+        # We put CLOSING brackets on the left so we can detect them easily!
+
 
         for char in s:
             if char in pairs:
