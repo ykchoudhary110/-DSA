@@ -9,6 +9,7 @@ class Solution:
             else:
                 right = mid
         return nums[left]
+      
         
 
         # left = 0
