@@ -10,9 +10,12 @@ class Solution:
         # return merged
 
         #insted of thsi for what we can do it for better understanding is 
+        #unpackign the elements in the interval adn this is common in python this way
         for start , end in intervals:
-            if len(merged)==0 or start>merged[-1][1]:
+            if len(merged)==0 or start>merged[-1][1]: # Case A: If merged is empty, OR this interval starts AFTER the previous ended:
+            # (No overlap, so add it as a new separate interval)
                 merged.append([start, end])
-            else:
+            else:  # Case B: They OVERLAP!
+            # (Update the end time of the previous interval to whichever is larger)
                 merged[-1][1]=max(merged[-1][1], end)
         return merged
