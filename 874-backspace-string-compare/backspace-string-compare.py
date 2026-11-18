@@ -1,8 +1,8 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        def built(string):
+        def built(text):
             stack = []
-            for char in string:
+            for char in text:
                 if char!='#':
                     stack.append(char)
                 elif len(stack)>0:
