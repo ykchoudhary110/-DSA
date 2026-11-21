@@ -2,7 +2,7 @@ class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
         left = 0
         right  = len(nums)-1
-        while left<=right:# suppose if left and right has 0 so 0<0 = false so alwasy here 0<=0
+        while left<=right:# nums [1] adn target = 2 so nums has not 2 so it need to be inserted at 2 so first condtion says left = 0
             mid = (left+right)//2
             if nums[mid]==target:
                 return mid
