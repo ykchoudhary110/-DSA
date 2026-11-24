@@ -6,7 +6,7 @@ class Solution:
         rows = len(matrix)
         cols = len(matrix[0])
 
-        zero_rows = []
+        zero_rows = [] # zero_rows = set() we can use set too as set doesnt allow duplicate so lets supoose if a single row has 4-5 zeros then lsit will store that all entires of rows and column correspondin to every zero but set will store it once adn thsu saves memory but if you use set here then you have to use zero_rows.add(r) there only add works not append
         zero_cols= []
         for r in range(rows):
             for c in range(cols):
