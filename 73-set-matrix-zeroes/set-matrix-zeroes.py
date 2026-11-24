@@ -11,7 +11,7 @@ class Solution:
         for r in range(rows):
             for c in range(cols):
                 if matrix[r][c]==0:
-                    zero_rows.append(r)
+                    zero_rows.append(r)#zero_rows.add(r)
                     zero_cols.append(c)
         for r in range(rows):
             for c in range(cols):
